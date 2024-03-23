@@ -1,0 +1,14 @@
+<div class="flex flex-wrap gap-5 mb-12 ">
+	<ng-container *ngIf="recipeArr.length > 0; else elseBlock">
+		<app-recipe-card fun="localModalHandler()" *ngFor="let recipeData of recipeArr" [recipe]="recipeData"
+			class="md:w-[31.2%] sm:w-[46%] w-full"></app-recipe-card>
+	</ng-container>
+	<ng-template #elseBlock>
+		<h1 class="text-center w-full p-10">No data found.</h1>
+	</ng-template>
+	<div class="fixed bottom-[80px] right-[50px]">
+		<button (click)="localModalHandler()" mat-fab color="primary" aria-label="Example icon button with a menu icon">
+			<mat-icon>add</mat-icon>
+		</button>
+	</div>
+</div>

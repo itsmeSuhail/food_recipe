@@ -1,0 +1,33 @@
+<form (ngSubmit)="Onsubmit()" class="sm:w-[27rem] w-[20rem] p-6 rounded-lg shadow-md text-black">
+	<div class=" mb-4 w-full">
+		<mat-form-field class="w-full">
+			<mat-label>Name</mat-label>
+			<input matInput name="title" type="text" placeholder="enter title" [(ngModel)]="recipe.title"
+				class="py-1 px-3 text-grey-300 bg-transparent" />
+		</mat-form-field>
+	</div>
+	<div class=" mb-4 w-full">
+		<mat-form-field class="w-full">
+			<mat-label>Category</mat-label>
+			<input matInput name="category" type="text" placeholder="enter Category" [(ngModel)]="recipe.category"
+				class="py-1 px-3 text-grey-300  bg-transparent" />
+		</mat-form-field>
+	</div>
+	<div class=" mb-4 w-full">
+		<mat-form-field class="w-full">
+			<mat-label>Description</mat-label>
+			<input matInput name="description" type="text" placeholder="enter Description"
+				[(ngModel)]="recipe.description" class="py-1 px-3 text-grey-300 bg-transparent" />
+		</mat-form-field>
+	</div>
+	<div class=" mb-4 w-full">
+		<mat-form-field class="w-full">
+			<mat-label>Image</mat-label>
+			<input matInput name="image" type="text" placeholder="image url" [(ngModel)]="image"
+				class="py-1 px-3 text-grey-300  bg-transparent" />
+		</mat-form-field>
+	</div>
+	<div class="">
+		<button mat-raised-button color="primary" type="submit">add</button>
+	</div>
+</form>

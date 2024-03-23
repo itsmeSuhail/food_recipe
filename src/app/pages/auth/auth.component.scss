@@ -1,0 +1,109 @@
+.container {
+	position: relative;
+	max-width: 850px;
+	width: 100%;
+	padding: 40 30px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+	perspective: 500px;
+	height: 70%;
+	background: #000;
+
+	.cover {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		height: 100%;
+		width: 50%;
+		z-index: 98;
+		transition: all 1s ease;
+		transform-origin: left;
+		transform-style: preserve-3d;
+
+		.back,
+		.front {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			backface-visibility: hidden;
+		}
+
+		.back {
+			transform: rotateY(180deg);
+			backface-visibility: hidden;
+		}
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background: #7d2ae8;
+			opacity: 0.5;
+			z-index: 12;
+		}
+
+		&::after {
+			opacity: 0.3;
+			transform: rotateY(180deg);
+			backface-visibility: hidden;
+		}
+
+		img {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			z-index: 10;
+		}
+
+		.text {
+			position: absolute;
+			z-index: 130;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			.text1,
+			.text2 {
+				font-size: 26px;
+				font-weight: 600;
+				color: #fff;
+				text-align: center;
+				line-height: normal;
+			}
+
+			.text2 {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.rotate-active {
+		transform: rotateY(-180deg);
+	}
+
+	.form-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.login-form,
+		.signup-form {
+			width: calc(100% / 2 - 25px);
+			padding: 20px;
+		}
+	}
+
+}
+
+@media screen and (max-width:600px) {
+	.cover {
+		display: none;
+	}
+}

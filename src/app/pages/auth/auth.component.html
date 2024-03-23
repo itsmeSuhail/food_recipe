@@ -1,0 +1,85 @@
+<div class="flex justify-center h-screen items-center overflow-hidden">
+	<div class="container">
+		<div class="cover" [ngClass]="{'rotate-active':isRegister}">
+			<div class="front">
+				<img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="">
+				<div class="text">
+					<span class="text1">Share, Save and Create: Your Recipe Haven Awaits</span>
+					<span class="text2">Let's get Connected</span>
+				</div>
+			</div>
+			<div class="back">
+				<img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="">
+			</div>
+		</div>
+		<div class="from h-full">
+			<div class="form-content h-full">
+				<div class="login-form">
+					<h2 class="text-lg font-bold text-center pb-8">Login</h2>
+					<form (ngSubmit)="OnLoginsubmit()">
+						<div class=" mb-4 w-full">
+							<mat-form-field class="w-full">
+								<mat-label>Email</mat-label>
+								<input matInput name="email" type="email" placeholder="enter name"
+									[(ngModel)]="login.email" class="py-1 px-3 text-grey-300 bg-transparent" />
+							</mat-form-field>
+						</div>
+						<div class=" mb-4 w-full">
+							<mat-form-field class="w-full">
+								<mat-label>Password</mat-label>
+								<input matInput name="password" type="password" placeholder="enter Category"
+									[(ngModel)]="login.password" class="py-1 px-3 text-grey-300  bg-transparent" />
+							</mat-form-field>
+						</div>
+						<div class="">
+							<button class="w-full" mat-raised-button color="primary" type="submit">login</button>
+						</div>
+					</form>
+					<div>
+						Don't have account?
+						<button (click)='toggle()' mat-button color="warn">
+
+							signup
+						</button>
+					</div>
+				</div>
+				<div class="signup-form">
+					<h2 class="text-lg font-bold text-center pb-8">Signup</h2>
+					<form (ngSubmit)="OnSignupsubmit()">
+						<div class=" mb-4 w-full">
+							<mat-form-field class="w-full">
+								<mat-label>Name</mat-label>
+								<input matInput name="name" type="text" placeholder="enter name"
+									[(ngModel)]="signup.name" class="py-1 px-3 text-grey-300 bg-transparent" />
+							</mat-form-field>
+						</div>
+						<div class=" mb-4 w-full">
+							<mat-form-field class="w-full">
+								<mat-label>Email</mat-label>
+								<input matInput name="email" type="email" placeholder="enter email"
+									[(ngModel)]="signup.email" class="py-1 px-3 text-grey-300  bg-transparent" />
+							</mat-form-field>
+						</div>
+						<div class=" mb-4 w-full">
+							<mat-form-field class="w-full">
+								<mat-label>Password</mat-label>
+								<input matInput name="password" type="text" placeholder="enter Description"
+									[(ngModel)]="signup.password" class="py-1 px-3 text-grey-300 bg-transparent" />
+							</mat-form-field>
+						</div>
+						<div class="">
+							<button class="w-full" mat-raised-button color="primary" type="submit">signup</button>
+						</div>
+					</form>
+					<div>
+						have account?
+						<button (click)='toggle()' mat-button color="warn">
+
+							login
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
